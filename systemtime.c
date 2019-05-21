@@ -8,7 +8,7 @@
 #include <linux/clocksource.h>
 #include <linux/delay.h>
 #include <linux/io.h>
-#include <linux/io-64-nonatomic-lo-hi.h>
+//#include <linux/io-64-nonatomic-lo-hi.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/time.h>
@@ -67,7 +67,7 @@ static int ccat_systemtime_probe(struct platform_device *pdev)
 	systemtime->clock.mask = CLOCKSOURCE_MASK(32);
 	systemtime->clock.mult = 1;
 	systemtime->clock.shift = 0;
-	systemtime->clock.owner = THIS_MODULE;
+	//systemtime->clock.owner = THIS_MODULE;
 	systemtime->clock.flags = CLOCK_SOURCE_IS_CONTINUOUS;
 	return clocksource_register_hz(&systemtime->clock, NSEC_PER_SEC);
 }
