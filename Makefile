@@ -1,4 +1,9 @@
-KDIR ?= /lib/modules/$(shell uname -r)/build
+
+#VERSION=$(shell uname -r)
+VERSION=3.10.0-327.rt56.198.el6rt.x86_64
+
+#KDIR ?= /lib/modules/$(VERSION)/build
+KDIR ?= /usr/src/kernels/$(VERSION)
 obj-m += ccat.o ccat_netdev.o ccat_gpio.o ccat_sram.o ccat_systemtime.o ccat_update.o
 ccat-y := module.o
 ccat_netdev-y := netdev.o
